@@ -20,5 +20,5 @@ func main() {
 		return c.JSON(http.StatusOK, m)
 	})
 
-	e.Logger.Fatal(e.Start("127.0.0.1:2019"))
+	e.Logger.Fatal(e.Start(":2019"))
 }
