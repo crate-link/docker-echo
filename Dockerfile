@@ -1,10 +1,8 @@
-FROM golang:1.14
+FROM golang:1.22
 
 COPY echo-server/ /root
 
-ENV GO111MODULE=on
-
-RUN /root/build.sh
+RUN /bin/bash /root/build.sh
 
 
 FROM gcr.io/distroless/static
@@ -14,4 +12,3 @@ COPY --from=0 /root/echo-server /usr/local/bin/echo-server
 EXPOSE 2019
 
 ENTRYPOINT [ "echo-server" ]
-

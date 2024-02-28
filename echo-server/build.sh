@@ -5,5 +5,4 @@ cd /root
 
 go version
 
-CGO_ENABLED=0 go build .
-
+CGO_ENABLED=0 go build -v -ldflags "-w -s" -trimpath
